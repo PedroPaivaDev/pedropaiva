@@ -2,26 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+:root {
+  --mainHeight: 100vh;
+  --mainWidth: 100vw;
+  --HeaderHeigth: 50px;
+  --paddingIPhone: 70px;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-} */
 
 *, *:after, *:before {
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none;  
+  user-select: none;
   margin: 0;
   padding: 0;
   border: none;
@@ -35,14 +28,163 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+header {
+  position: fixed;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--mainWidth);
+  height: var(--HeaderHeigth);
+  z-index: 1;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: var(--mainWidth);
+  height: var(--mainHeight);
+  overflow: hidden;
+  z-index: 0;
+}
+
+input, select, label {
+  -webkit-user-select: initial;
+  -khtml-user-select: initial;
+  -moz-user-select: initial;
+  -ms-user-select: initial;
+  user-select: initial;
+  appearance: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul, a {
+  list-style:none;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
 h1 {
   font-size: 2rem;
+  margin-top: 10px;
   text-align: center;
 }
 
-.shadowDiv {
+h2 {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  text-align: center;
+}
+
+p, small, del {
+  font-weight: normal;
+}
+
+small {
+  font-size: 0.625rem;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: var(--HeaderHeigth) 0px 0px 0px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  padding-bottom: calc(var(--HeaderHeigth) + var(--paddingIPhone));
+}
+
+.envelope {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0px 10px;
+  text-align: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  gap: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.wrapper p {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.animeLeft {
+  opacity: 0;
+  transform: translateX(calc(-100vw * 0.2));
+  animation: animeLeft .3s forwards;
+}
+
+@keyframes animeLeft {
+  to{
+      opacity: 1;
+      transform: initial;
+  }
+}
+
+@media (min-width: 40rem) {
+  .container::-webkit-scrollbar, .bgPaper::-webkit-scrollbar {
+      background: transparent;
+      width: 10px;
+  }
+  .container::-webkit-scrollbar-track, .bgPaper::-webkit-scrollbar-track {
+      background: rgba(127,105,91,0.2);
+      border-radius: 10px;
+      padding: 5px;
+  }
+  .container::-webkit-scrollbar-thumb, .bgPaper::-webkit-scrollbar-thumb {
+      background-color: rgba(127,105,91,0.4);
+      border-radius: 10px;
+  }
+}
+
+.shadowBg {
   padding: 20px 40px;
   border-radius: 100px;
   background: rgba(0,0,0,0.7);
   box-shadow: 0 0 10px 10px rgba(0,0,0,0.7);
+  margin-top: 10px;
 }
