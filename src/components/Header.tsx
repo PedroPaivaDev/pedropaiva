@@ -6,7 +6,7 @@ const Header = () => {
     <header className='bg-moodboard-gray'>
       <nav className='text-moodboard-dark flex justify-around w-full'>
         {tags.map(tag =>
-          <a href={`#${tag}`} className='hover:text-moodboard-light duration-300'>{tag}</a>
+          <a key={tag} href={`#${tag}`} className='hover:text-moodboard-light duration-300'>{tag}</a>
         )}
       </nav>
     </header>
