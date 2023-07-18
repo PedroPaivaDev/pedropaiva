@@ -4,7 +4,6 @@ import type { Metadata } from 'next';
 import { Roboto_Flex as Roboto } from 'next/font/google';
 
 import Header from '@/components/Header';
-import Shelf from '@/components/Shelf';
 
 const roboto = Roboto({ subsets: ['latin'], variable: '--font-roboto' });
 
@@ -30,7 +29,6 @@ export default function RootLayout({
           <div className='page'>
             {children}
           </div>
-          <Shelf />
         </main>
       </body>
     </html>

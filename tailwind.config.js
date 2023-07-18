@@ -17,8 +17,9 @@ module.exports = {
           'orange': '#a05e3b',
           'salmon': '#e0857c',
           'musg': '#988359',
-          'gree': '#8a9e89',
-          'yellow': '#9c7a30'
+          'green': '#8a9e89',
+          'yellow': '#9c7a30',
+          'gray': '#b0b1b7'
         }
       }
     },
