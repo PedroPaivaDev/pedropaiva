@@ -1,5 +1,3 @@
-'use client'
-import Image from 'next/image';
 import React from 'react';
 
 interface PropsProjectCard {
@@ -19,7 +17,7 @@ const ProjectCard = ({title, description, deploy, gitHub, gif}: PropsProjectCard
         <a href={gitHub} className='w-3/12 hover:text-moodboard-salmon duration-300'>GitHub</a>
       </div>
       <p className='text-justify'>{description}</p>
-      <Image src={gif} alt='gif' width={200} height={200}/>
+      <img src={gif} alt='gif' width={'200px'} height={'200px'}/>
     </div>
   )
 }

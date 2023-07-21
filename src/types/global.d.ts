@@ -11,3 +11,7 @@ interface ProjectDB {
   gif: string;
   techs: string[];
 }
+
+interface OptionsObject {
+  [key: string]: string;
+}
