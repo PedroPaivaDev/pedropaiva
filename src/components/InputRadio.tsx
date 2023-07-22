@@ -5,7 +5,7 @@ interface PropsInputRadio {
   state: OptionsObject;
   setState: React.Dispatch<React.SetStateAction<OptionsObject>>;
   name: string;
-  className: string;
+  className?: string;
 }
 
 /**

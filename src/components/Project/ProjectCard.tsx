@@ -6,7 +6,7 @@ interface PropsProjectCard {
 
 const ProjectCard = ({project}: PropsProjectCard) => {
   return (
-    <div className='wrapper shadowBg'>
+    <div className='wrapper gap-4'>
       <div className='flex justify-between items-center w-full'>
         <div className='flex flex-col justify-center items-center w-full'>
           <h2 className='w-6/12'>{project.title}</h2>

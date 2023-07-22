@@ -7,7 +7,7 @@ const projectsDB:ProjectsDB = {
     deploy: "https://pp-restaurante.vercel.app/",
     gitHub: "https://github.com/PedroPaivaDev/pp-restaurante",
     gif: "https://github.com/PedroPaivaDev/pp-restaurante/blob/main/src/assets/animation1.gif?raw=true",
-    techs: ["React", "NextJS", "TypeScript", "Styled-Components", "Firebase", "JavaScript", "CSS", "HTML"]
+    techs: ["React", "NextJS", "TypeScript", "Styled-Components", "Firebase", "JavaScript", "CSS3", "HTML5"]
   },
   laPetra: {
     id: "laPetra",
@@ -17,7 +17,7 @@ const projectsDB:ProjectsDB = {
     deploy: "https://la-petra.vercel.app/",
     gitHub: "https://github.com/PedroPaivaDev/la-petra",
     gif: "https://github.com/PedroPaivaDev/la-petra/blob/main/src/assets/animation.gif?raw=true",
-    techs: ["React", "React-Router", "JavaScript", "CSS", "HTML", "Firebase"]
+    techs: ["React", "React-Router", "JavaScript", "CSS3", "HTML5", "Firebase"]
   },
   avatarArena: {
     id: "avatarArena",
@@ -27,7 +27,7 @@ const projectsDB:ProjectsDB = {
     deploy: "https://avatar-arena.vercel.app/",
     gitHub: "https://github.com/PedroPaivaDev/Avatar-Arena",
     gif: "https://github.com/PedroPaivaDev/Avatar-Arena/blob/main/src/assets/Anima.gif?raw=true",
-    techs: ["React", "React-Router", "JavaScript", "CSS", "HTML"]
+    techs: ["React", "React-Router", "JavaScript", "CSS3", "HTML5"]
   },
   pedropaiva: {
     id: "pedropaiva",
@@ -37,7 +37,7 @@ const projectsDB:ProjectsDB = {
     deploy: "https://pedropaiva.vercel.app/",
     gitHub: "https://github.com/PedroPaivaDev/pedropaiva",
     gif: "https://github.com/PedroPaivaDev/Avatar-Arena/blob/main/src/assets/Anima.gif?raw=true",
-    techs: ["React", "NextJS", "TypeScript", "TailwindCSS", "JavaScript", "CSS", "HTML"]
+    techs: ["React", "NextJS", "TypeScript", "TailwindCSS", "JavaScript", "CSS3", "HTML5"]
   },
   nlwSpacetimeIgnite: {
     id: "nlwSpacetimeIgnite",
@@ -47,7 +47,7 @@ const projectsDB:ProjectsDB = {
     deploy: "https://nlw-spacetime-ignite.vercel.app/",
     gitHub: "https://github.com/PedroPaivaDev/nlw-spacetime-ignite",
     gif: "https://github.com/PedroPaivaDev/nlw-spacetime-ignite/blob/main/assets/web.gif?raw=true",
-    techs: ["React", "React-Native", "NextJS", "TypeScript", "TailwindCSS", "NodeJS", "Prisma", "SQLite", "Fastify", "Figma", "JavaScript", "CSS", "HTML"]
+    techs: ["React", "React-Native", "NextJS", "TypeScript", "TailwindCSS", "NodeJS", "Prisma", "SQLite", "Fastify", "Figma", "JavaScript", "CSS3", "HTML5"]
   }
 }
 

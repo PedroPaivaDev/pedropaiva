@@ -10,9 +10,11 @@ interface ProjectDB {
   deploy: string;
   gitHub: string;
   gif: string;
-  techs: string[];
+  techs: TechTag[];
 }
 
 interface OptionsObject {
   [key: string]: string;
 }
+
+type TechTag = "HTML5" | "CSS3" | "JavaScript" | "React" | "React-Router" | "React-Native" | "NextJS" | "TypeScript" | "Styled-Components" | "Firebase" | "TailwindCSS" | "NodeJS" | "Prisma" | "SQLite" | "Fastify" | "Figma" | "SASS"
