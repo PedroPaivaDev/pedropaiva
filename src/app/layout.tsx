@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className={`${roboto.className}
         bg-[url(../assets/Renato-Navarro.jpeg)] bg-cover bg-center bg-moodboard-dark
         text-moodboard-light
-        sm:shadow-bgShadow
+        sm:shadow-blackShadowInset
       `}>
         <Header />
         <main>

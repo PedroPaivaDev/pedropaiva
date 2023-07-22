@@ -8,7 +8,8 @@ module.exports = {
   theme: {
     extend: {
       boxShadow: {
-        'bgShadow': 'inset 0 0 100px 50px black'
+        'blackShadowInset': 'inset 0 0 100px 50px black',
+        'whiteShadowInset': 'inset 0 0 100px 50px white'
       },
       colors: {
         'moodboard': {

@@ -4,6 +4,7 @@ interface ProjectsDB {
 
 interface ProjectDB {
   id: string;
+  type: 'original' | 'bootcamp' | 'curso';
   title: string;
   description: string;
   deploy: string;

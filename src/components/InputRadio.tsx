@@ -5,6 +5,7 @@ interface PropsInputRadio {
   state: OptionsObject;
   setState: React.Dispatch<React.SetStateAction<OptionsObject>>;
   name: string;
+  className: string;
 }
 
 /**
@@ -12,7 +13,7 @@ interface PropsInputRadio {
 * @returns um input do tipo 'radio' e um span com o valor da opção, caso esse valor seja fornecido no objeto. O valor armazenado no estado será um objeto com a chave(opção) e valor(iamgem).
 */
 function InputRadio({
-  options, state, setState, name, ...props
+  options, state, setState, name, className, ...props
 }:PropsInputRadio) {
 
   function handleChecked(option:string) {
@@ -24,11 +25,11 @@ function InputRadio({
   }
 
   return (
-    <div className="flex flex-wrap items-center justify-center gap-5">
+    <div className={className}>
       {options && Object.keys(options).map(option => 
         <div key={option}>
           <input
-            className="peer"
+            className="peer hidden"
             id={`${name + option}`}
             value={option}
             checked={handleChecked(option)}
@@ -37,9 +38,13 @@ function InputRadio({
             {...props}
           />
           <label htmlFor={`${name + option}`}
-            className="opacity-40 hover:opacity-100 peer-checked:opacity-100 cursor-pointer duration-300"
+            className="opacity-20 hover:opacity-100 peer-checked:opacity-100 cursor-pointer duration-300"
           >
-            <img src={options[option]}/>
+            <img
+              src={options[option]}
+              className={`${handleChecked(option) ? 'ring-1 ring-white' : ''}`}
+              alt={options[option]}
+            />
           </label>
         </div>
       )}

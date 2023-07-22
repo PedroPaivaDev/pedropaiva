@@ -1,23 +1,22 @@
 import React from 'react';
 
 interface PropsProjectCard {
-  title: string;
-  description: string;
-  deploy: string;
-  gitHub: string;
-  gif: string;
+  project: ProjectDB;
 }
 
-const ProjectCard = ({title, description, deploy, gitHub, gif}: PropsProjectCard) => {
+const ProjectCard = ({project}: PropsProjectCard) => {
   return (
-    <div className='wrapper bg-moodboard-dark p-5 rounded-3xl'>
+    <div className='wrapper shadowBg'>
       <div className='flex justify-between items-center w-full'>
-        <h2 className='w-6/12'>{title}</h2>
-        <a href={deploy} className='w-3/12 hover:text-moodboard-salmon duration-300'>Deploy</a>
-        <a href={gitHub} className='w-3/12 hover:text-moodboard-salmon duration-300'>GitHub</a>
+        <div className='flex flex-col justify-center items-center w-full'>
+          <h2 className='w-6/12'>{project.title}</h2>
+          <small className='uppercase'>Projeto {project.type}</small>
+        </div>
+        <a href={project.deploy} className='w-3/12 hover:text-moodboard-salmon duration-300'>Deploy</a>
+        <a href={project.gitHub} className='w-3/12 hover:text-moodboard-salmon duration-300'>GitHub</a>
       </div>
-      <p className='text-justify'>{description}</p>
-      <img src={gif} alt='gif' width={'200px'} height={'200px'}/>
+      <p className='text-justify'>{project.description}</p>
+      <img src={project.gif} alt='gif' width={'200px'} height={'200px'}/>
     </div>
   )
 }
