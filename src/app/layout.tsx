@@ -3,6 +3,8 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { Roboto_Flex as Roboto } from 'next/font/google';
 
+import ContentDBProvider from '@/contexts/ContentDBContext';
+
 import Header from '@/components/Header';
 
 const roboto = Roboto({ subsets: ['latin'], variable: '--font-roboto' });
@@ -27,7 +29,7 @@ export default function RootLayout({
         <Header />
         <main>
           <div className='page'>
-            {children}
+            <ContentDBProvider>{children}</ContentDBProvider>
           </div>
         </main>
       </body>
