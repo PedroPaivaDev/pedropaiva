@@ -5,7 +5,7 @@ import { ContentDBContext } from '@/contexts/ContentDBContext';
 import getOption from '@/helpers/getOption';
 
 import ProjectCard from './ProjectCard';
-import InputRadio from '../InputRadio';
+import InputRadio from './InputRadio';
 
 const Projects = () => {
   const contentDB = React.useContext(ContentDBContext);

@@ -7,10 +7,10 @@ const About = () => {
   const {text} = React.useContext(ContentDBContext);
 
   return (
-    <div className="wrapper">
+    <section className="wrapper">
       <h2 id="Sobre">Sobre</h2>
       <p className="shadowBg text-justify">{text.about}</p>
-    </div>
+    </section>
   )
 }
 
