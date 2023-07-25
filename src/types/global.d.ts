@@ -36,6 +36,7 @@ interface CourseDB {
   id: string;
   title: string;
   institution: string;
+  certificate?: string;
 }
 
 interface OptionsObject {
