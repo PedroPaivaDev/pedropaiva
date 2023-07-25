@@ -28,9 +28,7 @@ export default function RootLayout({
       `}>
         <Header />
         <main>
-          <div className='page'>
-            <ContentDBProvider>{children}</ContentDBProvider>
-          </div>
+          <ContentDBProvider>{children}</ContentDBProvider>
         </main>
       </body>
     </html>

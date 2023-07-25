@@ -3,7 +3,8 @@ interface ContentDB {
   projects: ProjectsDB;
   technologies: {
     [key: string]: string;
-  }
+  };
+  education: CoursesDB;
 }
 
 interface TextDB {
@@ -25,6 +26,16 @@ interface ProjectDB {
   gitHub: string;
   gif: string;
   techs: string[];
+}
+
+interface CoursesDB {
+  [key:string]: CourseDB;
+}
+
+interface CourseDB {
+  id: string;
+  title: string;
+  institution: string;
 }
 
 interface OptionsObject {

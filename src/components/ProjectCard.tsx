@@ -6,7 +6,7 @@ interface PropsProjectCard {
 
 const ProjectCard = ({project}: PropsProjectCard) => {
   return (
-    <div className='wrapper gap-4'>
+    <div className='wrapper w-full gap-4'>
       <div className='flex justify-center items-center w-full'>
         <div className='flex flex-col justify-center items-start w-6/12'>
           <h3>{project.title}</h3>
@@ -16,7 +16,9 @@ const ProjectCard = ({project}: PropsProjectCard) => {
         <a href={project.gitHub} target='_blank' className='w-3/12 hover:text-moodboard-salmon duration-300'>GitHub</a>
       </div>
       <p className='text-justify'>{project.description}</p>
-      <img src={project.gif} alt='gif' className="w-full"/>
+      <div className='flex justify-center items-center min-h-[280px] sm:h-[500px]'>
+        <img src={project.gif} alt='gif' className='max-h-[500px]'/>
+      </div>
     </div>
   )
 }

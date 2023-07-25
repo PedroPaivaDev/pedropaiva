@@ -31,8 +31,8 @@ const Projects = () => {
   },[projectsWithTech, contentDB]);
 
   return (
-    <section className="wrapper">
-      <h2 id="Projetos">Projetos</h2>
+    <section id="Projetos">
+      <h2>Projetos</h2>
       <div className="wrapper shadowBg gap-5">
         <p>{contentDB?.text.tagTechs}</p>
         {contentDB?.technologies && <InputRadio options={contentDB?.technologies} name={'techTags'}

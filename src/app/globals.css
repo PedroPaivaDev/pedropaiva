@@ -69,10 +69,6 @@ ul, a {
   font-weight: bold;
 }
 
-img {
-  max-width: 100%;
-}
-
 h1 {
   font-size: 2rem;
   margin-top: 10px;
@@ -107,12 +103,11 @@ small {
   padding: var(--HeaderHeigth) 0px 0px 0px;
 }
 
-.container {
+.contain {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 10px;
   text-align: center;
   width: 100%;
   height: 100%;
@@ -131,26 +126,28 @@ small {
   text-align: center;
 }
 
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: 100%;
-  margin-top: 10px;
-  margin-bottom: 10px;
   text-align: center;
-}
-
-.wrapper p {
-  width: 100%;
 }
 
 .row {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  width: 100%;
   flex-wrap: wrap;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -170,16 +167,16 @@ small {
 }
 
 @media (min-width: 40rem) {
-  .container::-webkit-scrollbar, .bgPaper::-webkit-scrollbar {
+  .contain::-webkit-scrollbar, .bgPaper::-webkit-scrollbar {
       background: transparent;
       width: 10px;
   }
-  .container::-webkit-scrollbar-track, .bgPaper::-webkit-scrollbar-track {
+  .contain::-webkit-scrollbar-track, .bgPaper::-webkit-scrollbar-track {
       background: rgba(127,105,91,0.2);
       border-radius: 10px;
       padding: 5px;
   }
-  .container::-webkit-scrollbar-thumb, .bgPaper::-webkit-scrollbar-thumb {
+  .contain::-webkit-scrollbar-thumb, .bgPaper::-webkit-scrollbar-thumb {
       background-color: rgba(127,105,91,0.4);
       border-radius: 10px;
   }
