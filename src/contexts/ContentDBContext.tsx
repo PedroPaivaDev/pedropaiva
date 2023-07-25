@@ -10,7 +10,8 @@ const defaultContext: ContentDB = {
     tagTechs: ''
   },
   projects: {},
-  technologies: {}
+  technologies: {},
+  education: {}
 }
 
 export const ContentDBContext = React.createContext<ContentDB>(defaultContext);
