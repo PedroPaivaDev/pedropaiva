@@ -1,10 +1,24 @@
 import React from 'react';
 
+import Loading from './Loading';
+
 interface PropsProjectCard {
   project: ProjectDB;
 }
 
 const ProjectCard = ({project}: PropsProjectCard) => {
+  const [isImageLoaded, setIsImageLoaded] = React.useState(false);
+  const [loading, setLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    const img = new Image();
+    img.src = project.gif;
+    img.onload = () => {
+      setLoading(false);
+      setIsImageLoaded(true);
+    };
+  }, [project.gif]);
+
   return (
     <div className='wrapper w-full gap-4'>
       <div className='flex justify-center items-center w-full'>
@@ -17,7 +31,10 @@ const ProjectCard = ({project}: PropsProjectCard) => {
       </div>
       <p className='text-justify'>{project.description}</p>
       <div className='flex justify-center items-center min-h-[280px] sm:h-[500px]'>
-        <img src={project.gif} alt='gif' className='max-h-[500px]'/>
+        {loading ? <Loading /> : isImageLoaded ?
+          <img src={project.gif} alt="gif" className="max-h-[500px]"/> :
+          null
+        }
       </div>
     </div>
   )
