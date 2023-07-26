@@ -11,6 +11,7 @@ interface TextDB {
   introduction: string;
   about: string;
   tagTechs: string;
+  projectType: string;
 }
 
 interface ProjectsDB {
@@ -40,7 +41,7 @@ interface CourseDB {
 }
 
 interface OptionsObject {
-  [key: string]: string;
+  [key: string]: string | undefined;
 }
 
 // type TechTag = "HTML5" | "CSS3" | "JavaScript" | "React" | "React-Router" | "React-Native" | "NextJS" | "TypeScript" | "Styled-Components" | "Firebase" | "TailwindCSS" | "NodeJS" | "Prisma" | "SQLite" | "Fastify" | "Figma" | "SASS" | "Vite" | "Bootstrap" | "JQuery"

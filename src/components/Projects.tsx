@@ -10,13 +10,20 @@ import InputRadio from './InputRadio';
 const Projects = () => {
   const contentDB = React.useContext(ContentDBContext);
   const [projectsWithTech, setProjectsWithTech] = React.useState<ProjectsDB|null>(null);
+  const [selectedProjectType, setSelectedProjectType] = React.useState<OptionsObject>({autoral: undefined});
   const [selectedTech, setSelectedTech] = React.useState<OptionsObject>({"HTML5": "https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"});
   const [selectedProject, setSelectedProject] = React.useState<ProjectDB|null>(null);
+
+  const projectsTypes:OptionsObject = {
+    autoral: undefined,
+    bootcamp: undefined,
+    curso: undefined
+  }
 
   React.useEffect(() => {
     if(contentDB?.projects) {
       let filteredProjects = {};
-      Object.keys(contentDB?.projects).filter(projectId => contentDB?.projects[projectId].techs.includes(getOption(selectedTech))).forEach(projectId => {
+      Object.keys(contentDB?.projects).filter(projectId => contentDB?.projects[projectId].type===getOption(selectedProjectType)).filter(projectId => contentDB?.projects[projectId].techs.includes(getOption(selectedTech))).forEach(projectId => {
         filteredProjects = {
           ...filteredProjects,
           [projectId]: contentDB?.projects[projectId]
@@ -24,21 +31,28 @@ const Projects = () => {
       });
       setProjectsWithTech(filteredProjects);
     }
-  },[selectedTech, contentDB]);
+  },[contentDB, selectedProjectType, selectedTech]);
 
   React.useEffect(() => {
     projectsWithTech && setSelectedProject(projectsWithTech[Object.keys(projectsWithTech)[0]]);
-  },[projectsWithTech, contentDB]);
+  },[contentDB, projectsWithTech]);
 
   return (
     <section id="Projetos">
       <h2>Projetos</h2>
       <div className="wrapper shadowBg gap-5">
-        <p>{contentDB?.text.tagTechs}</p>
-        {contentDB?.technologies && <InputRadio options={contentDB?.technologies} name={'techTags'}
-          state={selectedTech} setState={setSelectedTech}
+        <p>{contentDB?.text.projectType}</p>
+        <InputRadio options={projectsTypes} name={'techTags'}
+          state={selectedProjectType} setState={setSelectedProjectType}
           className={"row gap-5"}
-        />}
+        />
+        <p>{contentDB?.text.tagTechs}</p>
+        {contentDB?.technologies &&
+          <InputRadio options={contentDB?.technologies} name={'techTags'}
+            state={selectedTech} setState={setSelectedTech}
+            className={"row gap-5"}
+          />
+        }
         <div className="flex gap-4">
           {projectsWithTech && selectedProject && Object.keys(projectsWithTech).map(projectId =>
             <div

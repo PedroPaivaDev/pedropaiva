@@ -16,7 +16,7 @@ const Education = () => {
               {education[course].certificate &&
                 <a href={education[course].certificate} target='_blank'
                   className="
-                    text-sm pr-1 pl-1 text-moodboard-dark duration-300
+                    text-sm px-1 text-moodboard-dark duration-300
                     hover:text-moodboard-light
                     bg-moodboard-salmon rounded-full
                   "
