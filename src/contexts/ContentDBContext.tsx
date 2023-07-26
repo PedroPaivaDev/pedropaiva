@@ -7,7 +7,8 @@ const defaultContext: ContentDB = {
   text: {
     introduction: '',
     about: '',
-    tagTechs: ''
+    tagTechs: '',
+    projectType: ''
   },
   projects: {},
   technologies: {},
