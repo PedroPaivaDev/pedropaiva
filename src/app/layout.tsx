@@ -3,6 +3,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { Roboto_Flex as Roboto } from 'next/font/google';
 
+import HeaderViewProvider from '@/contexts/HeaderViewContext';
 import ContentDBProvider from '@/contexts/ContentDBContext';
 
 import Header from '@/components/Header';
@@ -26,10 +27,14 @@ export default function RootLayout({
         text-moodboard-light
         sm:shadow-blackShadowInset
       `}>
-        <Header />
-        <main>
-          <ContentDBProvider>{children}</ContentDBProvider>
-        </main>
+        <HeaderViewProvider>
+          <Header />
+          <main>
+            <ContentDBProvider>
+              {children}
+            </ContentDBProvider>
+          </main>
+        </HeaderViewProvider>
       </body>
     </html>
   )
