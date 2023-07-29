@@ -20,7 +20,7 @@ const ProjectCard = ({project}: PropsProjectCard) => {
   }, [project.gif]);
 
   return (
-    <div className='wrapper w-full gap-4'>
+    <div className='animeLeft wrapper w-full gap-4'>
       <div className='flex justify-center items-center w-full'>
         <div className='flex flex-col justify-center items-start w-6/12'>
           <h3>{project.title}</h3>

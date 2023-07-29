@@ -6,6 +6,7 @@ import getOption from '@/helpers/getOption';
 
 import ProjectCard from './ProjectCard';
 import InputRadio from './InputRadio';
+import Slider from './Slider';
 
 const Projects = () => {
   const contentDB = React.useContext(ContentDBContext);
@@ -19,6 +20,28 @@ const Projects = () => {
     bootcamp: undefined,
     curso: undefined
   }
+
+  const handleSwipe = (direction: 'right' | 'left') => {
+    if(projectsWithTech && Object.keys(projectsWithTech).length > 1 && selectedProject) {
+      const arrayProjects = Object.keys(projectsWithTech);
+      const indexCurrentProj = arrayProjects.indexOf(selectedProject?.id);
+      if(
+        direction==='right' &&
+        indexCurrentProj > 0
+      ) {
+        setSelectedProject(projectsWithTech[arrayProjects[indexCurrentProj - 1]]);
+      } else if(
+        direction==='left' &&
+        indexCurrentProj < (arrayProjects.length - 1)
+      ) {
+        setSelectedProject(projectsWithTech[arrayProjects[indexCurrentProj + 1]])
+      } else {
+        return;
+      }
+    } else {
+      return;
+    }
+  };
 
   React.useEffect(() => {
     if(contentDB?.projects) {
@@ -66,9 +89,11 @@ const Projects = () => {
             />
           )}
         </div>
-        {selectedProject &&
-          <ProjectCard key={selectedProject.id} project={selectedProject}/>
-        }
+        <Slider onSwipe={handleSwipe}>
+          {selectedProject &&
+            <ProjectCard key={selectedProject.id} project={selectedProject}/>
+          }
+        </Slider>
       </div>
     </section>
   )
