@@ -14,6 +14,7 @@ const Projects = () => {
   const [selectedProjectType, setSelectedProjectType] = React.useState<OptionsObject>({autoral: undefined});
   const [selectedTech, setSelectedTech] = React.useState<OptionsObject>({"HTML5": "https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"});
   const [selectedProject, setSelectedProject] = React.useState<ProjectDB|null>(null);
+  const [animeDirection, setAnimeDirection] = React.useState('animeRight');
 
   const projectsTypes:OptionsObject = {
     autoral: undefined,
@@ -29,11 +30,13 @@ const Projects = () => {
         direction==='right' &&
         indexCurrentProj > 0
       ) {
+        setAnimeDirection('animeLeft');
         setSelectedProject(projectsWithTech[arrayProjects[indexCurrentProj - 1]]);
       } else if(
         direction==='left' &&
         indexCurrentProj < (arrayProjects.length - 1)
       ) {
+        setAnimeDirection('animeRight');
         setSelectedProject(projectsWithTech[arrayProjects[indexCurrentProj + 1]])
       } else {
         return;
@@ -91,7 +94,10 @@ const Projects = () => {
         </div>
         <Slider onSwipe={handleSwipe}>
           {selectedProject &&
-            <ProjectCard key={selectedProject.id} project={selectedProject}/>
+            <ProjectCard key={selectedProject.id}
+              project={selectedProject}
+              className={animeDirection}
+            />
           }
         </Slider>
       </div>

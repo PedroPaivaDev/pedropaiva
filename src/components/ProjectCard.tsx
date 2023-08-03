@@ -4,9 +4,10 @@ import Loading from './Loading';
 
 interface PropsProjectCard {
   project: ProjectDB;
+  className: string;
 }
 
-const ProjectCard = ({project}: PropsProjectCard) => {
+const ProjectCard = ({project, className}: PropsProjectCard) => {
   const [isImageLoaded, setIsImageLoaded] = React.useState(false);
   const [loading, setLoading] = React.useState(true);
 
@@ -20,7 +21,7 @@ const ProjectCard = ({project}: PropsProjectCard) => {
   }, [project.gif]);
 
   return (
-    <div className='animeLeft wrapper w-full gap-4'>
+    <div className={`${className} wrapper w-full gap-4`}>
       <div className='flex justify-center items-center w-full'>
         <div className='flex flex-col justify-center items-start w-6/12'>
           <h3>{project.title}</h3>
