@@ -47,7 +47,7 @@ Clique nas versões abaixo, para observar a evolução do projeto ao longo do te
 
 | Versão | Update |
 | ------ | ------ |
-| [main](https://pedropaiva.vercel.app/) | Primeira versão do projeto. |
+| [main](https://pedropaiva.vercel.app/) | Primeira versão do projeto: Filtro de tecnologias para visualizar os projetos e utilização do Content Management System (CMS) para atualizar o site, sem precisar fazer o deploy novamente. |
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
